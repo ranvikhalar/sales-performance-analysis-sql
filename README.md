@@ -26,7 +26,7 @@ The dataset contains transactional sales data including:
 ---
 
 ## Tools Used
-- SQLite (DB Browser)
+- SQL Server
 - SQL
 - Excel
 - GitHub
