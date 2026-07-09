@@ -53,9 +53,11 @@ The dataset contains transactional sales data including:
 
 ## Key Skills Demonstrated
 - Data Cleaning using SQL
+- Data Cleaning
 - Exploratory Data Analysis
 - KPI Development
 - Aggregations & Grouping
+- Common Table Expressions (CTEs)
 - Window Functions (to be added)
 - Business Insight Generation
 
