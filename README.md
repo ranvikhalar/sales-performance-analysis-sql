@@ -196,6 +196,6 @@ The findings from this project help business stakeholders:
 
 ## Author
 
-**Ranveer Khalar**
+**Ranveer Kaur**
 
 Aspiring Sales Data Analyst with a background in Statistics and hands-on experience in SQL, Excel, Power BI, and Python. Passionate about transforming raw data into meaningful insights through data analysis, visualization, and analytical thinking to support informed decision-making.
