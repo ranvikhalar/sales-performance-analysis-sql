@@ -185,27 +185,6 @@ In this case, the subquery returns only **one value**, so no alias is needed.
 
 ---
 
-## Best Practice
-
-Use meaningful aliases that describe the contents of the derived table.
-
-Good examples:
-
-- `sales_summary`
-- `product_sales`
-- `regional_sales`
-- `customer_summary`
-
-Avoid generic aliases such as:
-
-- `x`
-- `t`
-- `temp`
-
-Descriptive aliases improve readability and make SQL queries easier to understand and maintain.
-
----
-
 ## Key Takeaway
 
 - A subquery inside the **FROM** clause creates a **derived table**.
