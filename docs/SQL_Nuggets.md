@@ -184,9 +184,3 @@ WHERE Sales_Amount >
 In this case, the subquery returns only **one value**, so no alias is needed.
 
 ---
-
-## Key Takeaway
-
-- A subquery inside the **FROM** clause creates a **derived table**.
-- Every derived table must have an alias because SQL Server treats it like a temporary table.
-- Subqueries that return a single value (such as those used in `WHERE` or `HAVING`) do not require an alias.
