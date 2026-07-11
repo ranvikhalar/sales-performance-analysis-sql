@@ -86,3 +86,128 @@ SELECT
 FROM dbo.sales_data
 ORDER BY total_sales_revenue DESC;
 ```
+
+---
+
+# SQL Nugget #2: Why Does a Derived Table Need an Alias?
+
+## Concept
+
+A subquery placed inside the `FROM` clause is called a **derived table**. Since it behaves like a temporary table, SQL Server requires it to have a name (alias).
+
+Without an alias, SQL Server does not know how to reference the derived table and returns an error.
+
+---
+
+## Incorrect Example
+
+```sql
+SELECT AVG(total_sales_revenue)
+FROM
+(
+    SELECT
+        Product_ID,
+        SUM(Sales_Amount) AS total_sales_revenue
+    FROM dbo.sales_data
+    GROUP BY Product_ID
+);
+```
+
+### Result
+
+```
+Every derived table must have its own alias.
+```
+
+---
+
+## Correct Example
+
+```sql
+SELECT AVG(total_sales_revenue)
+FROM
+(
+    SELECT
+        Product_ID,
+        SUM(Sales_Amount) AS total_sales_revenue
+    FROM dbo.sales_data
+    GROUP BY Product_ID
+) AS sales_summary;
+```
+
+---
+
+## Why Is an Alias Required?
+
+The inner query returns a **temporary table**, not a single value.
+
+Example:
+
+| Product_ID | total_sales_revenue |
+|------------|--------------------:|
+| P101 | 25,000 |
+| P102 | 18,500 |
+| P103 | 31,200 |
+
+Since this result behaves like a table, SQL Server requires a name for it. The alias (`sales_summary`) acts as the name of that temporary table.
+
+---
+
+## When Is an Alias Required?
+
+### Subquery Returning a Table (Alias Required)
+
+```sql
+SELECT *
+FROM
+(
+    SELECT Product_ID, SUM(Sales_Amount) AS total_sales_revenue
+    FROM dbo.sales_data
+    GROUP BY Product_ID
+) AS sales_summary;
+```
+
+---
+
+### Subquery Returning a Single Value (Alias Not Required)
+
+```sql
+SELECT *
+FROM dbo.sales_data
+WHERE Sales_Amount >
+(
+    SELECT AVG(Sales_Amount)
+    FROM dbo.sales_data
+);
+```
+
+In this case, the subquery returns only **one value**, so no alias is needed.
+
+---
+
+## Best Practice
+
+Use meaningful aliases that describe the contents of the derived table.
+
+Good examples:
+
+- `sales_summary`
+- `product_sales`
+- `regional_sales`
+- `customer_summary`
+
+Avoid generic aliases such as:
+
+- `x`
+- `t`
+- `temp`
+
+Descriptive aliases improve readability and make SQL queries easier to understand and maintain.
+
+---
+
+## Key Takeaway
+
+- A subquery inside the **FROM** clause creates a **derived table**.
+- Every derived table must have an alias because SQL Server treats it like a temporary table.
+- Subqueries that return a single value (such as those used in `WHERE` or `HAVING`) do not require an alias.
