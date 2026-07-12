@@ -6,7 +6,7 @@ The purpose of these notes is to build a practical SQL knowledge base that can b
 
 ---
 
-# Nugget #1: SQL Logical Query Processing Order
+# SQL Nugget #1: SQL Logical Query Processing Order
 
 ## Why can't a SELECT alias be used in the GROUP BY clause?
 
@@ -185,9 +185,13 @@ In this case, the subquery returns only **one value**, so no alias is needed.
 
 ---
 
+---
+
 # SQL Nugget #3: Common Sales KPIs
 
-The following are common Key Performance Indicators (KPIs) used in sales analytics. These formulas are independent of any specific dataset and represent standard business calculations.
+The following are commonly used Key Performance Indicators (KPIs) in Sales Analytics. These formulas represent standard business calculations and are widely used in sales reporting and business intelligence dashboards.
+
+> **Note:** Some profitability KPIs are included for learning purposes. Their implementation depends on the business definitions and data model of the underlying dataset.
 
 ---
 
@@ -200,7 +204,7 @@ Measures the total revenue generated from all sales transactions.
 ### Formula
 
 ```text
-Total Sales Revenue = SUM(Sales Amount)
+Total Sales Revenue = Σ(Sales Amount)
 ```
 
 ---
@@ -214,10 +218,7 @@ Measures the average revenue generated from each sales transaction.
 ### Formula
 
 ```text
-Average Sales =
-Total Sales Revenue
-/
-Total Number of Transactions
+Average Sales = Total Sales Revenue / Total Number of Transactions
 ```
 
 ---
@@ -231,10 +232,7 @@ Measures the average amount spent per customer order.
 ### Formula
 
 ```text
-Average Order Value =
-Total Sales Revenue
-/
-Total Number of Orders
+Average Order Value (AOV) = Total Sales Revenue / Total Number of Orders
 ```
 
 ---
@@ -248,8 +246,7 @@ Measures the total number of product units sold.
 ### Formula
 
 ```text
-Total Quantity Sold =
-SUM(Quantity Sold)
+Total Quantity Sold = Σ(Quantity Sold)
 ```
 
 ---
@@ -263,8 +260,7 @@ Measures the total number of completed sales transactions.
 ### Formula
 
 ```text
-Total Transactions =
-COUNT(Transactions)
+Total Transactions = COUNT(Transactions)
 ```
 
 ---
@@ -273,16 +269,12 @@ COUNT(Transactions)
 
 ### Business Purpose
 
-Measures how much each product, region, or category contributes to total company revenue.
+Measures the percentage of total company revenue contributed by a product, category, region, or sales representative.
 
 ### Formula
 
 ```text
-Revenue Contribution (%) =
-(Category Revenue
-/
-Total Company Revenue)
-× 100
+Revenue Contribution (%) = (Category Revenue / Total Company Revenue) × 100
 ```
 
 ---
@@ -291,15 +283,18 @@ Total Company Revenue)
 
 ### Business Purpose
 
-Measures the average discount provided to customers.
+Measures the average discount applied to sales transactions.
 
 ### Formula
 
 ```text
-Average Discount =
-SUM(Discount)
-/
-Number of Transactions
+Average Discount = Σ(Discount) / Total Number of Transactions
+```
+
+or
+
+```text
+Average Discount = AVG(Discount)
 ```
 
 ---
@@ -308,16 +303,12 @@ Number of Transactions
 
 ### Business Purpose
 
-Measures how sales increase or decrease between two periods.
+Measures the increase or decrease in sales over a specified time period.
 
 ### Formula
 
 ```text
-Sales Growth (%) =
-(Current Sales − Previous Sales)
-/
-Previous Sales
-× 100
+Sales Growth (%) = ((Current Sales − Previous Sales) / Previous Sales) × 100
 ```
 
 ---
@@ -326,15 +317,12 @@ Previous Sales
 
 ### Business Purpose
 
-Measures the direct cost associated with producing or purchasing products sold.
+Measures the direct cost associated with products sold.
 
 ### Formula
 
 ```text
-COGS =
-Unit Cost
-×
-Quantity Sold
+COGS = Unit Cost × Quantity Sold
 ```
 
 ---
@@ -343,25 +331,19 @@ Quantity Sold
 
 ### Business Purpose
 
-Measures the amount earned after deducting product costs from revenue.
+Measures the earnings after deducting product costs from revenue.
 
 ### Formula
 
 ```text
-Profit =
-Revenue − Cost
+Profit = Revenue − Cost
 ```
 
 or
 
 ```text
-Profit =
-(Unit Price − Unit Cost)
-×
-Quantity Sold
+Profit = (Unit Price − Unit Cost) × Quantity Sold
 ```
-
-> **Note:** The exact formula depends on how revenue is stored in the database.
 
 ---
 
@@ -374,11 +356,7 @@ Measures the percentage of revenue retained after covering direct product costs.
 ### Formula
 
 ```text
-Gross Profit Margin (%) =
-Gross Profit
-/
-Revenue
-× 100
+Gross Profit Margin (%) = (Gross Profit / Revenue) × 100
 ```
 
 ---
@@ -387,13 +365,12 @@ Revenue
 
 ### Business Purpose
 
-Measures the profit earned from selling one unit of a product.
+Measures the profit earned on each unit sold.
 
 ### Formula
 
 ```text
-Profit per Unit =
-Unit Price − Unit Cost
+Profit per Unit = Unit Price − Unit Cost
 ```
 
 ---
@@ -402,17 +379,12 @@ Unit Price − Unit Cost
 
 ### Business Purpose
 
-Measures the actual revenue received after discounts.
+Measures revenue received after applying discounts.
 
 ### Formula
 
 ```text
-Discounted Revenue =
-Quantity Sold
-×
-Unit Price
-×
-(1 − Discount)
+Discounted Revenue = Quantity Sold × Unit Price × (1 − Discount)
 ```
 
 ---
@@ -421,16 +393,12 @@ Unit Price
 
 ### Business Purpose
 
-Measures the percentage of existing customers retained over a given period.
+Measures the percentage of customers retained during a specified period.
 
 ### Formula
 
 ```text
-Retention Rate (%) =
-Retained Customers
-/
-Customers at Beginning of Period
-× 100
+Customer Retention Rate (%) = (Retained Customers / Customers at Beginning of Period) × 100
 ```
 
 ---
@@ -439,16 +407,12 @@ Customers at Beginning of Period
 
 ### Business Purpose
 
-Measures the percentage of new customers acquired during a period.
+Measures the percentage of new customers acquired during a specified period.
 
 ### Formula
 
 ```text
-Acquisition Rate (%) =
-New Customers
-/
-Total Customers
-× 100
+Customer Acquisition Rate (%) = (New Customers / Total Customers) × 100
 ```
 
 ---
@@ -457,16 +421,12 @@ Total Customers
 
 ### Business Purpose
 
-Measures actual sales performance against a predefined target.
+Measures actual sales performance against a predefined sales target.
 
 ### Formula
 
 ```text
-Target Achievement (%) =
-Actual Sales
-/
-Sales Target
-× 100
+Sales Target Achievement (%) = (Actual Sales / Sales Target) × 100
 ```
 
 ---
@@ -475,13 +435,12 @@ Sales Target
 
 ### Business Purpose
 
-Measures total revenue generated by each sales representative.
+Measures the total revenue generated by each sales representative.
 
 ### Formula
 
 ```text
-Sales per Representative =
-SUM(Sales Revenue)
+Sales per Representative = Σ(Sales Revenue by Sales Representative)
 ```
 
 ---
@@ -495,10 +454,7 @@ Measures the average revenue generated across all sales representatives.
 ### Formula
 
 ```text
-Average Revenue per Representative =
-Total Sales Revenue
-/
-Number of Sales Representatives
+Average Revenue per Sales Representative = Total Sales Revenue / Total Number of Sales Representatives
 ```
 
 ---
@@ -507,14 +463,12 @@ Number of Sales Representatives
 
 ### Business Purpose
 
-Ranks products based on their revenue.
+Ranks products based on their total sales revenue.
 
 ### Formula
 
 ```text
-Rank Products
-by
-Total Sales Revenue
+Product Revenue Rank = Rank(Total Sales Revenue)
 ```
 
 ---
@@ -523,23 +477,34 @@ Total Sales Revenue
 
 ### Business Purpose
 
-Measures cumulative revenue over time.
+Measures cumulative sales revenue over time.
 
 ### Formula
 
 ```text
-Running Revenue =
-Current Period Revenue
-+
-Previous Running Revenue
+Running Sales Revenue = Current Period Revenue + Previous Running Revenue
 ```
 
 ---
 
 ## Dataset Note
 
-This project uses a synthetic dataset for SQL practice.
+This project uses a synthetic sales dataset for SQL practice and portfolio development.
 
-While most revenue-based KPIs can be demonstrated accurately, some profitability KPIs (such as Profit and Gross Profit Margin) should be interpreted conceptually because the dataset generates several financial fields independently rather than from a consistent transaction model.
+Most revenue-based KPIs can be demonstrated accurately using the available data. However, some profitability KPIs (such as **Profit** and **Gross Profit Margin**) are included for learning purposes only because the synthetic dataset generates `Sales_Amount`, `Unit_Price`, `Unit_Cost`, `Quantity_Sold`, and `Discount` independently rather than from a mathematically consistent transaction model.
 
-In a production environment, KPI definitions should always be validated with business stakeholders before reporting results.
+In a production environment, KPI definitions should always be validated with business stakeholders before reporting analytical results.
+
+---
+
+## Key Takeaway
+
+> A technically correct SQL query does not always produce a valid business KPI.
+
+Before reporting a KPI, a data analyst should verify:
+
+1. The business definition of each field.
+2. Whether the required fields are mathematically related.
+3. That calculations use consistent business definitions.
+4. That the dataset contains the required level of detail.
+5. That the final results make business sense.
