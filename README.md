@@ -158,15 +158,24 @@ The dashboard includes:
 
 This project answers key business questions that support sales performance analysis and strategic decision-making, including:
 
-- Which products and product categories generate the highest and lowest sales?
-- Which regions are underperforming and require additional sales or marketing efforts?
+- What is the overall sales performance of the business?
+- Which product categories generate the highest sales revenue?
+- Which regions generate the highest and lowest sales revenue?
 - Which sales representatives consistently achieve the highest sales performance?
-- How do sales trends change over time?
-- How do customer types contribute to overall revenue?
-- How do discounts influence sales performance?
-- Does product pricing impact sales volume?
-- Which sales channels and payment methods are most preferred by customers?
-- What business insights can improve overall sales performance?
+- How do new and returning customers contribute to total sales revenue?
+- How do monthly sales trends change over time?
+- Which sales channels generate the highest sales revenue?
+- Which payment methods are most preferred by customers?
+- How do product prices and discounts vary across product categories?
+- Which products generate the highest and lowest sales revenue?
+- Which products and sales representatives perform above the company average?
+- Which regions generate the highest average order value?
+- Which product categories contribute the largest share of total sales revenue?
+- How does cumulative sales revenue grow over time?
+- How does month-over-month sales performance change?
+- Who is the top-performing sales representative within each region?
+- Which are the top three products within each product category?
+- What business insights can support better sales and business decisions?
 
 ---
 
