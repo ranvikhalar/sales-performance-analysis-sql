@@ -508,3 +508,125 @@ Before reporting a KPI, a data analyst should verify:
 3. That calculations use consistent business definitions.
 4. That the dataset contains the required level of detail.
 5. That the final results make business sense.
+
+---
+
+# SQL Nugget #4: Understanding Window Functions
+
+## What is a Window Function?
+
+A **window function** performs a calculation across a set of rows **without combining them into one row**.
+
+Unlike aggregate functions (`SUM()`, `AVG()`, `COUNT()`), window functions return a result **for every row**.
+
+---
+
+## General Syntax
+
+```sql
+Function() OVER
+(
+    [PARTITION BY column_name]
+    [ORDER BY column_name]
+)
+```
+
+The `OVER()` clause tells SQL **how to perform the calculation**.
+
+---
+
+## Example
+
+```sql
+SELECT
+    Product_ID,
+    SUM(Sales_Amount) AS total_sales_revenue,
+    RANK() OVER
+    (
+        ORDER BY SUM(Sales_Amount) DESC
+    ) AS product_revenue_rank
+FROM dbo.sales_data
+GROUP BY Product_ID;
+```
+
+---
+
+## How It Works
+
+### Step 1
+
+SQL groups the data by `Product_ID`.
+
+| Product_ID | Total Sales Revenue |
+|------------|--------------------:|
+| P101 | 1200 |
+| P102 | 1500 |
+| P103 | 400 |
+
+---
+
+### Step 2
+
+The `OVER()` clause tells SQL to order the grouped results by total sales revenue in descending order.
+
+```sql
+ORDER BY SUM(Sales_Amount) DESC
+```
+
+---
+
+### Step 3
+
+`RANK()` assigns a ranking based on that order.
+
+| Product_ID | Total Sales Revenue | Rank |
+|------------|--------------------:|----:|
+| P102 | 1500 | 1 |
+| P101 | 1200 | 2 |
+| P103 | 400 | 3 |
+
+---
+
+## What Does OVER() Do?
+
+Think of `OVER()` as giving instructions to the window function.
+
+For example:
+
+```sql
+RANK() OVER (ORDER BY SUM(Sales_Amount) DESC)
+```
+
+means:
+
+> Rank the products from the highest sales revenue to the lowest.
+
+---
+
+## ORDER BY vs OVER(ORDER BY)
+
+```sql
+ORDER BY total_sales_revenue DESC;
+```
+
+Sorts the **final output**.
+
+```sql
+RANK() OVER (ORDER BY SUM(Sales_Amount) DESC)
+```
+
+Determines **how the rank is calculated**.
+
+These are two different operations.
+
+---
+
+## Key Takeaways
+
+- Window functions perform calculations while preserving every row in the result.
+- The `OVER()` clause defines how the calculation is performed.
+- `ORDER BY` inside `OVER()` determines the order used for the calculation.
+- `ORDER BY` outside `OVER()` sorts the final result set.
+- Window functions are commonly used for rankings, running totals, moving averages, and period comparisons.
+
+
