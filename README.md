@@ -61,6 +61,7 @@ The project uses a synthetic sales dataset containing transactional sales record
 
 ## Project Structure
 
+```text
 Sales-Performance-Analysis/
 │
 ├── dataset/                 # Sales dataset (.csv)
@@ -73,28 +74,35 @@ Sales-Performance-Analysis/
 ## Project Workflow
 
 ### Phase 1: Data Understanding
-- Explored dataset structure.
-- Verified column names and data types.
-- Validated imported data against the source dataset.
+- Imported the sales dataset into Microsoft SQL Server.
+- Explored the dataset structure.
+- Verified column names, data types, and total records.
+- Confirmed the imported data matched the source dataset.
 
-### Phase 2: Data Quality Assessment
-- Checked for missing values.
-- Identified duplicate records.
+### Phase 2: Data Validation
+- Checked for missing values and duplicate records.
 - Validated numeric, categorical, and date fields.
-- Performed business rule validation.
+- Verified business rules (pricing, discounts, and sales values).
+- Reviewed the dataset before analysis.
 
-### Phase 3: Exploratory Data Analysis
+### Phase 3: Exploratory Data Analysis (EDA)
 - Analyzed overall sales performance.
 - Evaluated product, regional, customer, and sales representative performance.
-- Identified sales trends and business patterns.
+- Explored monthly sales trends.
+- Answered key business questions using SQL.
 
-### Phase 4: KPI Development
-- Built key sales performance indicators.
-- Measured revenue, customer, product, and regional performance.
+### Phase 4: Business Analysis
+- Calculated key performance indicators (KPIs).
+- Identified top and bottom performing products, regions, and sales representatives.
+- Analyzed customer types, sales channels, payment methods, pricing, and discounts.
+- Generated insights to support business decisions.
 
 ### Phase 5: Power BI Dashboard
-- Developed an interactive dashboard to visualize sales performance.
-- Presented KPIs using charts, slicers, and business-focused visualizations.
+- Built an interactive sales performance dashboard.
+- Created DAX measures for key KPIs.
+- Designed a star schema using a dedicated Date table.
+- Added slicers, drill-down, and drill-through functionality.
+- Developed an executive dashboard and a region-level analysis dashboard.
 
 ### Phase 6: Business Insights & Recommendations
 - Summarized key findings.
