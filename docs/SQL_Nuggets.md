@@ -1,8 +1,8 @@
 # SQL Nuggets
 
-This document captures important SQL concepts, best practices, and interview tips learned while completing the **Sales Performance Analysis | SQL & Power BI Case Study**.
+This document captures important SQL concepts, best practices, and interview tips learned while completing the **Sales Performance Analysis | SQL & Power BI**.
 
-The purpose of these notes is to build a practical SQL knowledge base that can be used for future projects, technical interviews, and day-to-day data analysis.
+The purpose of these notes is to build a practical SQL knowledge base that can be used for future projects and day-to-day data analysis.
 
 ---
 
