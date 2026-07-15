@@ -68,7 +68,7 @@ Sales-Performance-Analysis/
 ├── sql/                     # SQL scripts
 ├── powerbi/                 # Power BI report (.pbix) and dashboard images
 └── README.md
-```text
+```
 
 ---
 
