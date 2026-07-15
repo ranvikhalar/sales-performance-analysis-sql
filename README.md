@@ -68,6 +68,7 @@ Sales-Performance-Analysis/
 ├── sql/                     # SQL scripts
 ├── powerbi/                 # Power BI report (.pbix) and dashboard images
 └── README.md
+```text
 
 ---
 
@@ -112,18 +113,18 @@ Sales-Performance-Analysis/
 
 ## Dashboard & Reporting
 
-The SQL analysis is complemented with an interactive Power BI dashboard designed for business stakeholders.
+The SQL analysis is complemented with an interactive Power BI dashboard that summarizes sales performance and supports business analysis.
 
 The dashboard includes:
 
-- Executive Sales Overview
+- Executive Sales Dashboard
 - Sales Performance KPIs
 - Regional Sales Analysis
 - Product Performance
 - Sales Representative Performance
 - Customer Analysis
-- Pricing & Discount Analysis
 - Sales Trends
+- Interactive filtering, drill-down, and drill-through
 
 ---
 
@@ -132,72 +133,78 @@ The dashboard includes:
 ### Business & Analytical Skills
 
 - Data Understanding
-- Data Quality Assessment
+- Data Validation
 - Business Rule Validation
 - Exploratory Data Analysis (EDA)
-- KPI Development
-- Business Insight Generation
-- Data-Driven Decision Making
+- KPI Analysis
+- Sales Performance Analysis
+- Business Problem Solving
 
-### SQL Skills
+---
 
-- Data Cleaning
-- Data Validation
-- Filtering & Sorting
-- Aggregations & Grouping
-- JOIN Operations
-- Common Table Expressions (CTEs)
-- Window Functions
-- Subqueries
+### SQL Skills Demonstrated
+
+- Validated dataset quality before analysis
+- Analyzed sales performance using aggregate functions
+- Summarized business metrics using GROUP BY and HAVING
+- Used date functions to analyze monthly sales trends
+- Applied subqueries to compare products against company averages
+- Used Common Table Expressions (CTEs) to organize complex queries
+- Applied window functions for rankings, running totals, and month-over-month comparisons
 
 ---
 
 ## Business Questions Answered
 
-This project answers key business questions that support sales performance analysis and strategic decision-making, including:
-
+### Sales Performance
 - What is the overall sales performance of the business?
-- Which product categories generate the highest sales revenue?
-- Which regions generate the highest and lowest sales revenue?
-- Which sales representatives consistently achieve the highest sales performance?
-- How do new and returning customers contribute to total sales revenue?
 - How do monthly sales trends change over time?
+
+### Products
+- Which products generate the highest and lowest sales revenue?
+- Which product categories generate the highest sales revenue?
+- Which are the top three products within each product category?
+- How do product prices and discounts vary across product categories?
+
+### Regions
+- Which regions generate the highest and lowest sales revenue?
+- Which regions generate the highest average order value?
+
+### Sales Representatives
+- Which sales representatives consistently achieve the highest sales performance?
+- Which products and sales representatives perform above the company average?
+- Who is the top-performing sales representative within each region?
+
+### Customers
+- How do new and returning customers contribute to total sales revenue?
+
+### Sales Operations
 - Which sales channels generate the highest sales revenue?
 - Which payment methods are most preferred by customers?
-- How do product prices and discounts vary across product categories?
-- Which products generate the highest and lowest sales revenue?
-- Which products and sales representatives perform above the company average?
-- Which regions generate the highest average order value?
-- Which product categories contribute the largest share of total sales revenue?
-- How does cumulative sales revenue grow over time?
-- How does month-over-month sales performance change?
-- Who is the top-performing sales representative within each region?
-- Which are the top three products within each product category?
-- What business insights can support better sales and business decisions?
 
 ---
 
 ## Business Value
 
-This analysis demonstrates how raw sales data can be transformed into actionable business insights that support strategic decision-making.
+This project shows how sales data can be analyzed using SQL and Power BI to better understand business performance. By exploring sales trends and key performance metrics, the analysis helps answer common business questions and presents the results through an interactive dashboard.
 
-The findings from this project help business stakeholders:
+The analysis helps users:
 
 - Monitor overall sales performance.
-- Identify high-performing and underperforming products.
-- Compare sales performance across regions and sales representatives.
-- Evaluate pricing and discount strategies.
-- Understand customer purchasing behavior.
-- Support data-driven sales and marketing decisions.
+- Compare product, regional, and sales representative performance.
+- Identify top and bottom performing products.
+- Analyze customer types, sales channels, and payment methods.
+- Track sales trends over time.
+- Support business decisions with data.
 
 ---
 
 ## Future Enhancements
 
+- Expand the analysis using multiple related tables to simulate a real-world business database.
 - Perform sales forecasting using Python and machine learning techniques.
-- Apply advanced SQL techniques, including query optimization and indexing.
-- Build reusable SQL views and stored procedures for reporting.
-- Expand the analysis with additional business KPIs and executive dashboards.
+- Optimize SQL queries to improve performance on larger datasets.
+- Incorporate additional business metrics and KPIs into the dashboard.
 
 ---
 
@@ -205,4 +212,4 @@ The findings from this project help business stakeholders:
 
 **Ranveer Kaur**
 
-Aspiring Sales Data Analyst with a background in Statistics and hands-on experience in SQL, Excel, Power BI, and Python. Passionate about transforming raw data into meaningful insights through data analysis, visualization, and analytical thinking to support informed decision-making.
+Aspiring Sales Data Analyst with a background in Statistics and hands-on experience in SQL, Excel, Power BI, and Python. Passionate about solving business problems through data analysis, interactive dashboards, and clear, data-driven insights.
