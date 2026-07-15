@@ -1,54 +1,48 @@
-# Sales Performance Analysis | SQL & Power BI Case Study
-
-> **Portfolio Case Study:** This project demonstrates the end-to-end workflow of a Sales Data Analyst—from validating raw sales data to delivering actionable business insights using SQL and Power BI. The project follows a structured analytics process to support data-driven business decisions.
-
----
+# Sales Performance Analysis | SQL & Power BI
 
 ## Project Overview
 
-This project simulates a real-world Sales Data Analyst workflow using transactional sales data. The analysis begins with understanding and validating the dataset, followed by data quality assessment, exploratory data analysis (EDA), KPI development, dashboard creation, and business insight generation.
-
-Rather than focusing only on SQL queries, this project emphasizes analytical thinking and business decision-making by answering practical questions that sales managers and business leaders use to improve business performance.
+I built this project to strengthen my SQL and Power BI skills by analyzing a sales dataset from start to finish. I began by validating the data, explored sales performance using SQL, and created an interactive Power BI dashboard to answer business questions and present the results in a clear and meaningful way.
 
 ---
 
 ## Business Objective
 
-The objective of this project is to transform raw sales data into actionable business insights that support strategic decision-making.
-
-The analysis focuses on answering key business questions such as:
-
-- Which products and product categories generate the highest and lowest sales?
-- Which regions require additional sales and marketing efforts?
-- Which sales representatives consistently achieve the highest sales performance?
-- How do sales trends change over time (monthly, quarterly, and yearly)?
-- How do customer types contribute to overall revenue?
-- How do discounts influence sales performance?
-- Does product pricing impact sales volume?
-- Which sales channels and payment methods are most preferred by customers?
-- What business insights can improve overall sales performance?
+The goal of this project was to analyze a sales dataset using SQL and Power BI to better understand sales performance and present the findings through an interactive dashboard. The analysis focuses on identifying trends, evaluating performance, and answering business questions that can support sales and operational decisions.
 
 ---
 
 ## Dataset
 
-The dataset consists of transactional sales records representing individual sales activities. Each record contains information related to products, customers, pricing, discounts, sales representatives, and regions, enabling comprehensive sales performance analysis.
+The project uses a synthetic sales dataset containing transactional sales records. Each row represents a single sales transaction and includes information about products, customers, pricing, discounts, sales representatives, and regions.
 
-### Key Fields
+---
 
-- Product_ID
-- Sale_Date
-- Sales_Rep
-- Region
-- Sales_Amount
-- Quantity_Sold
-- Product_Category
-- Unit_Cost
-- Unit_Price
-- Customer_Type
-- Discount
-- Payment_Method
-- Sales_Channel
+### Data Source
+- **Source:** Kaggle
+- **Dataset:** `sales_data.csv`
+- **Purpose:** Educational and portfolio project
+
+---
+
+### Data Dictionary
+
+| Column | Description |
+|--------|-------------|
+| **Product_ID** | Unique identifier for each product |
+| **Sale_Date** | Date when the sales transaction occurred |
+| **Sales_Rep** | Sales representative responsible for the sale |
+| **Region** | Sales region (North, South, East, or West) |
+| **Sales_Amount** | Total revenue generated from the transaction |
+| **Quantity_Sold** | Number of units sold in the transaction |
+| **Product_Category** | Product category (Electronics, Furniture, Clothing, or Food) |
+| **Unit_Cost** | Cost per unit of the product |
+| **Unit_Price** | Selling price per unit |
+| **Customer_Type** | Indicates whether the customer is New or Returning |
+| **Discount** | Discount applied to the transaction |
+| **Payment_Method** | Payment method used by the customer |
+| **Sales_Channel** | Sales channel (Online or Retail) |
+| **Region_and_Sales_Rep** | Combined Region and Sales Representative field used for analysis |
 
 ---
 
@@ -56,27 +50,23 @@ The dataset consists of transactional sales records representing individual sale
 
 | Tool | Purpose |
 |------|---------|
-| Microsoft SQL Server | Data storage and querying |
-| SQL Server Management Studio (SSMS) | Writing and executing SQL queries |
-| SQL | Data cleaning, validation, and business analysis |
-| Microsoft Excel | Initial data review and validation |
-| Power BI | Interactive dashboard development and data visualization |
+| Microsoft SQL Server | Stored and managed the sales dataset |
+| SQL Server Management Studio (SSMS) | Wrote and executed SQL queries |
+| SQL | Data validation, exploratory data analysis, and business analysis |
+| Microsoft Excel | Reviewed the dataset before importing into SQL Server |
+| Microsoft Power BI | Built interactive dashboards and data visualizations |
 | Git & GitHub | Version control and project documentation |
 
 ---
 
 ## Project Structure
 
-```
 Sales-Performance-Analysis/
 │
-├── dataset/                 # Raw sales dataset (.csv)
-├── sql/                     # SQL scripts organized by project phase
-├── powerbi/                 # Power BI dashboard (.pbix)
-├── screenshots/             # SQL results and dashboard images
-├── reports/                 # Business insights and recommendations
+├── dataset/                 # Sales dataset (.csv)
+├── sql/                     # SQL scripts
+├── powerbi/                 # Power BI report (.pbix) and dashboard images
 └── README.md
-```
 
 ---
 
